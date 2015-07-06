@@ -15,9 +15,10 @@ def word_count(open_file):
         increase value by 1
 """
         for word in words:
-            i = 1
-            file_dict[word] = i
-            i += 1
+            if word not in file_dict:
+                file_dict[word] = 1
+            else:
+                file_dict[word] = file_dict[word] + 1
     print file_dict
 
 word_count(open_file)
